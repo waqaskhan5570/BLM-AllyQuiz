@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="icon" href="img/logo.png" />
+    <title>Better Allies</title>
+  </head>
+
+  <body>
+    <div class="jumbotron text-left">
+      <div class="container">
+        <div class="row header">
+          <div class="col-8">
+            <img src="img/logo.png" class="img-logo" />
+            <h3>Black Lives Matter<br />Awareness Quiz</h3>
+            <p>
+              This quiz is used to educate teenagers on how to be a better ally
+              to the BLM movement. Some of the top ways you can help and be an
+              ally to the black community is by listening and checking in on
+              your black co-workers, friends etc Find out more in this
+              quiz/game!
+            </p>
+          </div>
+          <div class="col-4">
+            <img src="img/person.png" class="img-fluid img-person" />
+          </div>
+        </div>
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-dark btn-lg btn-block"
+            data-toggle="modal"
+            data-target="#screening"
+          >
+            Start Quiz
+          </button>
+          <br />
+          <br />
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+    <br />
+
+    <!-- More Information -->
+    <div class="container">
+      <div class="row list-header">
+        <div class="col-12">
+          <h4>More Information</h4>
+        </div>
+      </div>
+
+      <!-- What is BLM -->
+      <div class="row list" data-toggle="modal" data-target="#blm">
+        <div class="col-10">
+          <div class="row">
+            <div class="col-4">
+              <div class="icon-round">
+                <img src="img/logo.png" class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-8 pr-0 pl-0">
+              <h5>What is BLM?</h5>
+              <p>
+                Black Lives Matter is a decentralized political and social
+                movement ...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <img src="img/icon-arrow.png" class="img-fluid img-arrow" />
+        </div>
+      </div>
+
+      <!-- Importance -->
+      <div class="row list" data-toggle="modal" data-target="#importance">
+        <div class="col-10">
+          <div class="row">
+            <div class="col-4">
+              <div class="icon-round">
+                <img src="img/exclamation.png" class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-8 pr-0 pl-0">
+              <h5>Why is it Important?</h5>
+              <p>Countless young people, especially young ...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <img src="img/icon-arrow.png" class="img-fluid img-arrow" />
+        </div>
+      </div>
+
+      <!-- Guide -->
+      <div class="row list" data-toggle="modal" data-target="#guide">
+        <div class="col-10">
+          <div class="row">
+            <div class="col-4">
+              <div class="icon-round">
+                <img src="img/book.png" class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-8 pr-0 pl-0">
+              <h5>Guide to Being a Better Ally</h5>
+              <p>1. Recognizing Priviledges...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <img src="img/icon-arrow.png" class="img-fluid img-arrow" />
+        </div>
+      </div>
+    </div>
+    <!-- More Information Ends -->
+
+    <!-- Modal -->
+
+    <!-- Quiz Modal -->
+    <div
+      class="modal fade"
+      id="screening"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./img/logo.png" class="img-logo" alt="logo img" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body question">
+            <div class="container">
+              <!-- Questions -->
+              <!-- q1 -->
+              <div class="row q1 active" id="q1">
+                <h3>Tik Tok language(AAVE)</h3>
+                <p>
+                  Your friend is really into tik tok , her speaking has changed
+                  and she incorporates new phrases. She says things like “ms
+                  girl” “chile” Do you think there’s anything wrong with what
+                  she is doing?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1, 'q1Response','q1')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    yes
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q1Response','q1')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    No
+                  </button>
+                </div>
+                <div class="response" id="q1Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      great ! Your friend and many others use AAVE (African
+                      American Vernacular English)
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      Many have made this “tik tok language” or “gen z language”
+                      a part of their daily conversations. This “genz language”
+                      is actually AAVE (African American Vernacular English).
+                      AAVE has a deep rooted history and when non-native
+                      speakers mimic it, they are embodying negative stereotypes
+                      that are associated with african americans.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(1,1,2)"
+                >
+                  Next Question
+                </button>
+              </div>
+              <!-- q2 -->
+
+              <div class="row q2" id="q2">
+                <h3>Blackout Tuesday</h3>
+                <p>
+                  Last summer your friend and many others posted a black screen
+                  on their instagram feed with the # “blackout tuesday” or
+                  “blm”. Following that, some continued to post resources and
+                  petitions about BLM while others have not said anything since.
+                  Do you see anything wrong with someone not posting anything
+                  after the black square?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q2Response','q2')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    yes
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q2Response','q2')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    No
+                  </button>
+                </div>
+                <div class="response" id="q2Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      Absolutely. This is performance activism and with no
+                      follow up you are one of the many just hopping onto a
+                      “trend”
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      Although many choose not to use social media frequently,
+                      just posting a black square with no follow up can be very
+                      harmful to people of the black community. While you
+                      acknowledge the movement it doesn’t provide people with
+                      the resources they need to promote change.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(2,1,3)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!-- q3 -->
+
+              <div class="row q3" id="q3">
+                <h3>Racial Bullying/Trolling</h3>
+                <p>
+                  You see your peers acting and treating a black student
+                  differently than the others and making lighthearted jokes
+                  based on his/her racial differences.What do you do?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q3Response','q3')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    Take a stand against such behaviour and let your friends
+                    know that the behaviour is inappropriate.
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q3Response','q3')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    Support your peers
+                  </button>
+                </div>
+                <div class="response" id="q3Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      You risk the chance of losing support of your peers but
+                      you know you're doing the right thing.
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      This would mean that the jokes really didn't bother you
+                      and such a behaviour would lead to continuation of similar
+                      behaviour or even worse.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(3,1,4)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!--q4 -->
+
+              <div class="row q4" id="q4">
+                <h3>Privilege</h3>
+                <p>Jenny is a white ally. Do you think she has privilege?</p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q4Response','q4')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    yes
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q4Response','q4')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    No
+                  </button>
+                </div>
+                <div class="response" id="q4Response">
+                  <div class="response1" style="display: none">
+                    <p>Your right!</p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      One US study found that job resumes with traditionally
+                      white-sounding names received 50% more callbacks than
+                      those with traditionally Black names. <br />
+                      In the US, Black workers are less likely than white
+                      workers to be employed in a job that is consistent with
+                      their level of education. <br />
+
+                      On average, Black men in the US receive sentences that are
+                      19.1% longer than those of white men convicted for the
+                      same crimes.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(4,1,5)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!--q5 -->
+
+              <div class="row q5" id="q5">
+                <h3>Black History Month</h3>
+                <p>
+                  You and your friends celebrate black history month with great
+                  enthusiasm and support the movement however, one of your
+                  friend thinks black history should not only be confined to
+                  just one month of the year and that it should rather be
+                  celebrated and remembered all year round.Do you think she/he
+                  is right?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q5Response','q5')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    yes
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q5Response','q5')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    No
+                  </button>
+                </div>
+                <div class="response" id="q5Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      Congratulations you truly believe in supporting and
+                      standing up against anti racism!
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      Confining the history of an entire race of people to a
+                      28-day period not only diminishes the significance of
+                      their contributions but also allows the greater truth to
+                      be erased. Acknowledging that America is a multicultural
+                      society and that the accomplishments and contributions of
+                      people who are not White are real, substantial, and
+                      important is proof that the American ideals so many of us
+                      profess to value are real.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(5,1,6)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!--q6 -->
+
+              <div class="row q6" id="q6">
+                <h3>No Black Face</h3>
+                <p>
+                  Blackface" is the use of makeup to represent a caricature of a
+                  Black person, often used by non-Black people. Yet some people
+                  think it's OK to wear blackface on Halloween.What do you think
+                  about this?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q6Response','q6')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    No, it is NOT OK to wear blackface on Halloween
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q6Response','q6')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    It’s just a Halloween costume.I don’t see anything wrong
+                    about it
+                  </button>
+                </div>
+                <div class="response" id="q6Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      yay you’re right.Cheers to you rightfully supporting the
+                      black community!
+                    </p>
+                    <h4>What can you do?</h4>
+                    <p>
+                      Don’t wear blackface. Instead, share a #NoBlackface selfie
+                      to educate friends on why blackface is harmful and demand
+                      they don't wear blackface this Halloween.
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      Blackface is much more than just dark makeup used to
+                      enhance a costume. Its American origins can be traced to
+                      minstrel shows. In the mid to late nineteenth century,
+                      white actors would routinely use black grease paint on
+                      their faces when depicting plantation slaves and free
+                      blacks on stage.To be clear, these weren't flattering
+                      representations. At all. Taking place against the backdrop
+                      of a society that systematically mistreated and
+                      dehumanized black people, they were mocking portrayals
+                      that reinforced the idea that African-Americans were
+                      inferior in every way.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(6,1,7)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!--q7 -->
+
+              <div class="row q7" id="q7">
+                <h3>Representation matters</h3>
+                <p>
+                  Under 6% of children’s and young adult books published in 2019
+                  have a Black author or illustrator. Meanwhile, the most
+                  commonly assigned books in high school English classes have a
+                  startling lack of authors and protagonists of color, who
+                  identify as LGBTQ, or who have a disability.Do you think the
+                  representation of the under-represented community is
+                  essential?
+                </p>
+
+                <div class="bottom-question">
+                  <button
+                    onclick="showResponse(1,'q7Response','q7')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    Yes totally
+                  </button>
+                  <button
+                    onclick="showResponse(2,'q7Response','q7')"
+                    class="btn btn-dark btn-lg btn-block hidebtn"
+                  >
+                    I’m not very sure
+                  </button>
+                </div>
+                <div class="response" id="q7Response">
+                  <div class="response1" style="display: none">
+                    <p>
+                      Yay!you are absolutely right we should stand in solidarity
+                      to support the representation of the under-represented
+                    </p>
+                  </div>
+                  <div class="response2" style="display: none">
+                    <p>
+                      Representation matters within the slightest things, but
+                      affects our entire psyche.The word “black” represents an
+                      extremely diverse group of people, spanning a wide
+                      geographical area and a broad range of religious beliefs,
+                      ethnicities and languages. However, there seems to always
+                      be a flawed portrayal of our community in society, turning
+                      what should be a beautiful mosaic into a uniform canvas.
+                      This monotonous depiction of the black community often
+                      presents black people in a negative light. This affects
+                      not only how others in society perceive them but also
+                      affects how they view themselves. <br />
+                      Black people are often subjected to social labels and
+                      expectations for the entirety of our lives. A recent study
+                      from Yale University revealed that many preschool teachers
+                      have implicit biases against black students, resulting in
+                      lower expectations and gifted-program referrals rates for
+                      these students. Black people are subjected to harmful
+                      stereotypes even as early as infancy. Such stereotypes
+                      persist throughout a black person’s life — in youth, where
+                      we are viewed as thugs or troublemakers, up until
+                      adulthood, where we are disproportionately represented in
+                      the criminal justice system.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary next-btn"
+                  style="display: none"
+                  onclick="recordAnswers(7,1,0)"
+                >
+                  Next Question
+                </button>
+              </div>
+
+              <!--Questions End -->
+
+              <!-- Results -->
+
+              <!-- Result1 -->
+              <div class="row result1">
+                <h3>Thank you for playing Better Allies!</h3>
+                <p>
+                  Trying to improve and educate yourself can be one of the most
+                  challenging steps to take. Below is the link to black lives
+                  matter website.
+                  <br />
+                  Feel free to share this game!"
+                </p>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://blacklivesmatter.com/"
+                  aria-label="Learn more on who.int: Overview"
+                  >Learn more →
+                </a>
+              </div>
+
+              <!-- Result2 -->
+              <div class="row result2">
+                <h3>Incase more Questions are answerd wrong</h3>
+                <h3>This page will be displayed</h3>
+              </div>
+
+              <!-- Results End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Screening Modal Ends -->
+
+    <!-- BLM Modal -->
+
+    <div
+      class="modal fade"
+      id="blm"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./img/logo.png" class="img-logo" alt="logo image" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>BML</h3>
+
+            <p>
+              Black Lives Matter is a decentralized political and social
+              movement protesting against incidents of police brutality and all
+              racially motivated violence against black people.
+            </p>
+            <h4>#Blacklivesmatter</h4>
+
+            <p>
+              In July 2013, the movement began with the use of the hashtag
+              #BlackLivesMatter on social media after the acquittal of George
+              Zimmerman in the shooting death of African-American teen Trayvon
+              Martin 17 months earlier in February 2012. The movement became
+              nationally recognized for street demonstrations following the 2014
+              deaths of two African Americans, that of Michael Brown—resulting
+              in protests and unrest in Ferguson, Missouri, a city near St.
+              Louis—and Eric Garner in New York City.
+            </p>
+
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://en.wikipedia.org/wiki/Black_Lives_Matter"
+              aria-label="Learn more on who.int: Overview"
+              >Learn more →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLM Modal Ends -->
+
+    <!-- Importance Modal -->
+    <div
+      class="modal fade"
+      id="importance"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./img/logo.png" class="img-logo" alt="logo image" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>Importance</h3>
+            <p>
+              Countless young people, especially young Black and Latino men and
+              women, have been the victmms of police brutality and other forms
+              of institutional racism in our communities and around the country
+            </p>
+            <h4>Showing solidarity and the importance of Allyship</h4>
+            <p>
+              Black lives matter – now and always. Critics of the movement have
+              tried to argue that the title should be ‘All Lives Matter’.
+              However, this misses the point of the movement. No one questions
+              whether White lives matter – society has accepted that as a given.
+              <br />
+              <br />
+              Black lives, on the other hand, are the ones questioned and in
+              danger. Their lives need fighting for. Saying that Black lives
+              matter does not make non-Black lives matter any less. Another way
+              to look at the movement title is: Black Lives Matter Too.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Symptoms Modal end -->
+
+    <!-- Guide Modal -->
+    <div
+      class="modal fade"
+      id="guide"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./img/logo.png" class="img-logo" alt="logo image" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>Guide to be a Better Ally</h3>
+            <h4>Recognizing Privilege</h4>
+            <ul>
+              <li>
+                Black Americans can earn up to $1 million less than white
+                Americans
+              </li>
+              <li>Racial wealth gap is lead to years of discrimination</li>
+            </ul>
+
+            <h4>Silence is loud</h4>
+            <ul>
+              <li>how to not be a performative activist</li>
+              <li>support black owned businesses, artists etc</li>
+            </ul>
+
+            <h4>Listen</h4>
+            <ul>
+              <li>Listen to how friends/coworkers etc are feeling</li>
+              <li>Allow them to express all thoughts without judgment</li>
+              <li>Provide opportunities</li>
+            </ul>
+
+            <h4>Check in</h4>
+            <ul>
+              <li>Ask how you can provide support</li>
+              <li>
+                Let them know that they matter and their feelings are valid
+              </li>
+              <li>Do not tell black people how to mourn, protest or feel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prevent Modal Ends -->
+
+    <script src="./javascript.js"></script>
+  </body>
+</html>
